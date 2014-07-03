@@ -1,0 +1,72 @@
+auto: true
+
+markdown: rdiscount
+pygments: true
+paginate: 8
+permalink: /:title
+
+title: LI, Yu from 1981
+url: http://liyu1981.github.io
+feed: /atom.xml
+author_info: <a href="http://liyu1981.github.io/">LI,Yu</a>
+
+myblog:
+  gavatar: 6a1f8a9d412c8e54bed896135c6f7d0c
+  gpname: liyu1981
+  linkedin: http://www.linkedin.com/pub/yu-li/6/3a4/499
+  github: http://www.github.com/liyu1981?tab=repositories
+  googleanalytics: >
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49432539-1', 'liyu1981.github.io');
+    ga('send', 'pageview');
+    </script>
+  coverimgs: >
+    'url("http://liyu1981.smugmug.com/Photography/365-days-365-photos/i-QCTQNpn/0/X3/IMG_3940-X3.jpg")',
+    'url("http://liyu1981.smugmug.com/Photography/365-days-365-photos/i-zvPmxS6/0/X3/IMG_3006-X3.jpg")',
+    'url("http://liyu1981.smugmug.com/Photography/365-days-365-photos/i-mt6dbQD/0/X3/IMG_5953-X3.jpg")',
+    'url("http://liyu1981.smugmug.com/Photography/365-days-365-photos/i-BW2MzfC/0/X3/IMG_3402-X3.jpg")',
+    'url("http://liyu1981.smugmug.com/Photography/365-days-365-photos/i-HwZrx3V/0/X3/IMG_3374-X3.jpg")',
+    'url("http://liyu1981.smugmug.com/Photography/365-days-365-photos/i-HwZrx3V/0/X3/IMG_3374-X3.jpg")',
+    'url("http://liyu1981.smugmug.com/Photography/365-days-365-photos/i-3mqdZgt/0/X3/IMG_2301-X3.jpg")',
+    'url("http://liyu1981.smugmug.com/Photography/365-days-365-photos/i-MpHzMZ7/0/X3/IMG_1448-X3.jpg")'
+  postbgimg: http://liyu1981.smugmug.com/Photography/365-days-365-photos/i-wLzDhDC/0/X3/R0018155-X3.jpg
+
+prose:
+  rooturl: "_posts"
+  # siteurl: "http://liyu1981.github.io/"
+  media: "images"
+  metadata:
+    _posts/blog:
+      - name: "title"
+        field:
+          element: "text"
+          label: "Title"
+          value: ""
+          placeholder: "Input your title here"
+          type: "text"
+
+      - name: "description"
+        field:
+          element: "text"
+          label: "Description"
+          value: ""
+          placeholder: "Input your abstract here"
+          type: "text"
+
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+
+      - name: "published"
+        field:
+          element: "hidden"
+          value: "false"
+
+      - name: "category"
+        field:
+          element: "hidden"
+          value: "blog"
