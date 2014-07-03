@@ -1,7 +1,7 @@
 About
 =====
 
-This is my fork of try-try-try and notes while I am learning it.
+This is my fork of [try-try-try](https://github.com/rzezeski/try-try-try) and notes while I am learning it.
 
 The original README.md is renamed to README.orig.md.
 
