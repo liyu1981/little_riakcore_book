@@ -1,0 +1,46 @@
+{variables, [{appid, "myapp"}]}.
+
+
+%% .
+{template, "riak_core_min.gitignore",    ".gitignore"}.
+{template, "riak_core_min.Makefile",     "Makefile"}.
+{template, "riak_core_min.md",           "README.md"}.
+{template, "riak_core_min.rebar.config", "rebar.config"}.
+
+%% ./rel
+{dir, "rel"}.
+{template, "riak_core_min.reltool.config", "rel/reltool.config"}.
+{template, "riak_core_min.vars.config",    "rel/vars.config"}.
+{template, "riak_core_min.gen_dev",        "rel/gen_dev"}.
+{chmod, 8#744,                         "rel/gen_dev"}.
+
+{dir, "rel/files"}.
+{file, "riak_core_min.app.config",       "rel/files/app.config"}.
+{file, "riak_core_min.erl.script",       "rel/files/erl"}.
+{chmod, 8#744,                       "rel/files/erl"}.
+{file, "riak_core_min.runner",           "rel/files/{{appid}}"}.
+{chmod, 8#744,                       "rel/files/{{appid}}"}.
+{template, "riak_core_min.admin_runner", "rel/files/{{appid}}-admin"}.
+{chmod, 8#744,                       "rel/files/{{appid}}-admin"}.
+{file, "riak_core_min.nodetool",         "rel/files/nodetool"}.
+{chmod, 8#744,                       "rel/files/nodetool"}.
+{file, "riak_core_min.vm.args",          "rel/files/vm.args"}.
+
+{dir, "rel/vars"}.
+{template, "riak_core_min.dev_vars.config.src", "rel/vars/dev_vars.config.src"}.
+
+%% ./src
+{dir, "src"}.
+{template, "riak_core_min_app.erl",                "src/{{appid}}_app.erl"}.
+{template, "riak_core_min_console.erl",            "src/{{appid}}_console.erl"}.
+{template, "riak_core_min_sup.erl",                "src/{{appid}}_sup.erl"}.
+{template, "riak_core_min_vnode.erl",              "src/{{appid}}_vnode.erl"}.
+{template, "riak_core_min.app.src",                "src/{{appid}}.app.src"}.
+{template, "riak_core_min.erl",                    "src/{{appid}}.erl"}.
+{template, "riak_core_min.hrl",                    "src/{{appid}}.hrl"}.
+
+
+%% ./apps
+{dir, "apps/{{appid}}"}.
+{symlink, "../../src",  "apps/{{appid}}/src"}.
+{symlink, "../../ebin", "apps/{{appid}}/ebin"}.
