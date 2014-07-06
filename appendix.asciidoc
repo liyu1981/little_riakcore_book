@@ -1,0 +1,53 @@
+[appendix]
+Example Appendix
+================
+One or more optional appendixes go here at section level zero.
+
+Appendix Sub-section
+~~~~~~~~~~~~~~~~~~~
+NOTE: Preface and appendix subsections start out of sequence at level
+2 (level 1 is skipped).  This only applies to multi-part book
+documents.
+
+
+
+[bibliography]
+Example Bibliography
+====================
+The bibliography list is a style of AsciiDoc bulleted list.
+
+[bibliography]
+- [[[taoup]]] Eric Steven Raymond. 'The Art of Unix
+  Programming'. Addison-Wesley. ISBN 0-13-142901-9.
+- [[[walsh-muellner]]] Norman Walsh & Leonard Muellner.
+  'DocBook - The Definitive Guide'. O'Reilly & Associates. 1999.
+  ISBN 1-56592-580-7.
+
+
+[glossary]
+Example Glossary
+================
+Glossaries are optional. Glossaries entries are an example of a style
+of AsciiDoc labeled lists.
+
+[glossary]
+A glossary term::
+  The corresponding (indented) definition.
+
+A second glossary term::
+  The corresponding (indented) definition.
+
+
+[colophon]
+Example Colophon
+================
+Text at the end of a book describing facts about its production.
+
+
+[index]
+Example Index
+=============
+////////////////////////////////////////////////////////////////
+The index is normally left completely empty, it's contents are
+generated automatically by the DocBook toolchain.
+////////////////////////////////////////////////////////////////

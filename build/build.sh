@@ -1,11 +1,27 @@
-NAME="book-multi"
-VER="0.0.1"
+VER=`cat ../version.txt`
+DATE=`date "+%Y-%m"`
+
+# assemble the source files
+
+rm -rf src; mkdir -p src; cd src
+node ../doTool.js ../../preface.asciidoc >book.asciidoc <<< "{
+  \"version\": \"$VER\",
+  \"date\": \"$DATE\"
+}"
+for p in `cat ../../parts.txt`; do
+  cat "../$p/content.asciidoc" >>book.asciidoc
+done
+cat ../../appendix.asciidoc >>book.asciidoc
+cd -
 
 # generate the files
-rm -rf $NAME.xml
-asciidoc -b docbook $NAME.txt
+cd src
+rm -rf book.xml
+asciidoc -b docbook book.asciidoc
+cd -
+
 rm -rf $VER; mkdir -p $VER; cd $VER
-xsltproc --nonet ../docbook-xsl/chunked.xsl ../$NAME.xml
+xsltproc --nonet ../docbook-xsl/chunked.xsl ../src/book.xml
 cp -rv ../stylesheets/* .
 cp -rv ../images .
 cd -
