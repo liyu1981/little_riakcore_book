@@ -1,25 +1,10 @@
-The First Part of the Book
-==========================
-
-[partintro]
-.Optional part introduction title
---
-Optional part introduction goes here.
---
-
 The First Chapter
 -----------------
-Chapters can be grouped by preceeding them with a level 0 Book Part
-title.
-
-Book chapters are at level 1 and can contain sub-sections nested up to
-three deep.
+Chapters can contain sub-sections nested up to three deep.
 footnote:[An example footnote.]
 indexterm:[Example index entry]
 
-It's also worth noting that a book part can have it's own preface,
-bibliography, glossary and index. Chapters can have their own
-bibliography, glossary and index.
+Chapters can have their own bibliography, glossary and index.
 
 And now for something completely different: ((monkeys)), lions and
 tigers (Bengal and Siberian) using the alternative syntax index
@@ -76,15 +61,9 @@ indexterm:[Second example index entry]
 An example link to a bibliography entry <<taoup>>.
 
 
-
-The Second Part of the Book
-===========================
-
-The First Chapter of the Second Part
-------------------------------------
-Chapters grouped into book parts are at level 1 and can contain
-sub-sections.
-
+The Third Chapter
+-----------------
+Book chapters are at level 1 and can contain sub-sections.
 
 
 :numbered!:

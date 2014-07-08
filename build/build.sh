@@ -1,17 +1,20 @@
 VER=`cat ../version.txt`
 DATE=`date "+%Y-%m"`
+CWD=`pwd`
+SRCROOT=$CWD/..
+TOOLS=$CWD/tools
 
 # assemble the source files
 
 rm -rf src; mkdir -p src; cd src
-node ../doTool.js ../../preface.asciidoc >book.asciidoc <<< "{
+node $TOOLS/doTool.js $SRCROOT/preface.asciidoc >book.asciidoc <<< "{
   \"version\": \"$VER\",
   \"date\": \"$DATE\"
 }"
-for p in `cat ../../parts.txt`; do
-  cat "../$p/content.asciidoc" >>book.asciidoc
+for p in `cat $SRCROOT/parts.txt`; do
+  cat "$SRCROOT/$p/content.asciidoc" >>book.asciidoc
 done
-cat ../../appendix.asciidoc >>book.asciidoc
+cat $SRCROOT/appendix.asciidoc >>book.asciidoc
 cd -
 
 # generate the files
@@ -21,9 +24,20 @@ asciidoc -b docbook book.asciidoc
 cd -
 
 rm -rf $VER; mkdir -p $VER; cd $VER
-xsltproc --nonet ../docbook-xsl/chunked.xsl ../src/book.xml
+xsltproc --nonet $CWD/docbook-xsl/chunked.xsl ../src/book.xml
 cp -rv ../stylesheets/* .
 cp -rv ../images .
+cd -
+
+# now fix the code highlighting part
+cd $VER
+#files="index.html "`ls ch*.html`
+#for f in $files; do
+#  echo -n "source highlighting" $f "... "
+#  node $TOOLS/highlight.js $f >$f.fixed
+#  rm $f;mv $f.fixed $f
+#  echo "done."
+#done
 cd -
 
 # generate the outside symlink
