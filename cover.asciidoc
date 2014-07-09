@@ -37,16 +37,29 @@ backend programming, they have done enough of thinking how to distribute the
 computing to nodes in server clusters, make the storage scalable, and clean up
 this and that before bringing some crashed nodes back. Lots of programs in lots
 of programming languages have been done. Hundreds of thousands of lines of code
-have made the fun part gone. Then they learned some Erlang, and other cool
+have made the fun parts vanished . Then they learned some Erlang, and other cool
 stuff such as
 http://www.erlang.org/doc/design_principles/users_guide.html[OTP], and they
 want to resolve these problems again in a more elegant, understandable way, and
 most importantly, bring the fun parts back.  In short, if you have questions in
 how to elegantly write an always-up, instantly-scalable servers, you can stay.
 
-----
-Do not scared by me, but except the Erlang part. For reading this
-book, you have to at least be familar with how to write Erlang
-programs. If you are not, one of the excellent book is
-http://learnyousomeerlang.com[LYSE].
-----
+{zwsp} +
+
+But be not scared by me. :-)
+
+{zwsp} +
+
+As long as you are interested in writing some cool
+server stuff, you are welcome! RiakCore is made for ease the process of making
+something distributed cool. Geeks (including me) love it and think it the
+next-big-thing of server programming. But not everyone is geek. In this book, I
+will make my best to explain the practice in programming RiakCore, in language
+that everyone can follow and understand.
+
+NOTE: But I am serious in the Erlang part. For reading this
+book, you would better to be familar with writting Erlang
+programs. If you are not, I know an excellent book for you to read. Its name is
+http://learnyousomeerlang.com[Learn Your Some Erlang for great good!], or
+shortly LYSE. Throughout this book, I will frequently reference LYSE, whenever
+there is some Erlang stuff we would better to be aware of.

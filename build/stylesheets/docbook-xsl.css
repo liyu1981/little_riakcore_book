@@ -360,5 +360,6 @@ div.tip,
 div.important,
 div.caution
 {
+  margin-top: 10px;
   border: 1px solid #ccc;
 }
