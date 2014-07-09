@@ -1,54 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>A little RiakCore Book</title><link rel="stylesheet" type="text/css" href="docbook-xsl.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><link rel="home" href="index.html" title="A little RiakCore Book" /><link rel="next" href="ch01.html" title="Chapter 1. The First Chapter" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch01.html">Next</a></td></tr></table><hr /></div><div xml:lang="en" class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a id="idm218947803856"></a>A little RiakCore Book</h1></div><div><div class="author"><h3 class="author"><span class="firstname">LI,</span> <span class="othername">Yu</span> <span class="surname">(liyu1981@gmail.com)</span></h3><code class="email">&lt;<a class="email" href="mailto:liyu1981@gmail.com">liyu1981@gmail.com</a>&gt;</code></div></div><div><div class="revhistory"><table style="border-style:solid; width:100%;" summary="Revision History"><tr><th align="left" valign="top" colspan="3"><strong>Revision History</strong></th></tr><tr><td align="left">Revision 0.0.1</td><td align="left">2014-07</td><td align="left">LY(</td></tr></table></div></div></div><hr /></div><div class="dedication"><div class="titlepage"><div><div><h1 class="title"><a id="_for_what_and_for_whom"></a>For What and For Whom</h1></div></div></div><p>This little book is about <a class="ulink" href="https://github.com/basho/riak_core" target="_top">RiakCore</a>, which
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>A little RiakCore Book</title><link rel="stylesheet" type="text/css" href="docbook-xsl.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="A little RiakCore Book"><link rel="next" href="ch01.html" title="Chapter&nbsp;1.&nbsp;The First Chapter"><link rel="stylesheet" href="pygments.css" type="text/css"></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left">&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch01.html">Next</a></td></tr></table><hr></div><div xml:lang="en" class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a id="idm332075768864"></a>A little RiakCore Book</h1></div><div><div class="author"><h3 class="author"><span class="firstname">LI,</span> <span class="othername">Yu</span> <span class="surname">(liyu1981@gmail.com)</span></h3><code class="email">&lt;<a class="email" href="mailto:liyu1981@gmail.com">liyu1981@gmail.com</a>&gt;</code></div></div><div><div class="revhistory"><table style="border-style:solid; width:100%;" summary="Revision History"><tr><th align="left" valign="top" colspan="3"><strong>Revision History</strong></th></tr><tr><td align="left">Revision 0.0.1</td><td align="left">2014-07</td><td align="left">LY(</td></tr></table></div></div></div><hr></div><div class="dedication"><div class="titlepage"><div><div><h1 class="title"><a id="_for_what_and_for_whom"></a>For What and For Whom</h1></div></div></div><p>Attention! Your probably arrive the wrong place, and are planning
+spend sometime on something you are not interested and not familiar.
+So let us check whether we should leave.</p><p><span class="strong"><strong>For What</strong></span></p><p>This little book is about <a class="ulink" href="https://github.com/basho/riak_core" target="_top">RiakCore</a>, which
 is an application framework for building distributed, scalable, fault-tolerant
-applications. RiakCore is written in <a class="ulink" href="http://www.erlang.org" target="_top">Erlang</a> programming
-language, open sourced by <a class="ulink" href="http://www.basho.com" target="_top">Basho Technologies</a>.</p><p><span class="strong"><strong>For What</strong></span></p><p>RiakCore, as well as its foundation, Erlang, is all about building distributed,
-scalable, fault-tolerant applications. This kind of application is usually for
-serving purpose. Being different from what you use on your PC or phone,
-application for serving others should never stop, be always available, and
-recover from some really bad disasters.</p><p><span class="strong"><strong>For Whom</strong></span></p><p>Serious programmers who write servers</p><p><strong>Perl Test. </strong>
-</p><pre class="programlisting" data-language="perl"># *Source* block
-# Use: highlight code listings
-# (require `source-highlight` or `pygmentize`)
-use DBI;
-my $dbh = DBI-&gt;connect('...',$u,$p)
-    or die "connect: $dbh-&gt;errstr";</pre><p>
-</p><p><strong>Erlang Test. </strong>
-</p><pre class="programlisting" data-language="erlang">hello({name, Name}) -&gt;
-  "Hello" ++ Name;
-hello(_) -&gt;
-  "Hello, world".</pre><p>
-</p><pre class="programlisting" data-language="ruby">#
-# Useful Ruby base class extensions.
-#
-
-class Array
-
-  # Execute a block passing it corresponding items in
-  # +self+ and +other_array+.
-  # If self has less items than other_array it is repeated.
-
-  def cycle(other_array)  # :yields: item, other_item
-    other_array.each_with_index do |item, index|
-      yield(self[index % self.length], item)
-    end
-  end
-
-end
-
-if $0 == __FILE__                                 # <a id="CO1-1"><img href="images/icons/callouts/1.png" /></a>
-  # Array#cycle test
-  # true =&gt; 0
-  # false =&gt; 1
-  # true =&gt; 2
-  # false =&gt; 3
-  # true =&gt; 4
-  puts 'Array#cycle test'                         # <a id="CO1-2"><img href="images/icons/callouts/2.png" /></a>
-  [true, false].cycle([0, 1, 2, 3, 4]) do |a, b|
-    puts "#{a.inspect} =&gt; #{b.inspect}"
-  end
-end</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO1-1"><span><img src="images/icons/callouts/1.png" alt="1" border="0" /></span></a> </p></td><td valign="top" align="left"><p>
-First callout.
-</p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO1-2"><span><img src="images/icons/callouts/2.png" alt="2" border="0" /></span></a> </p></td><td valign="top" align="left"><p>
-Second callout.
-</p></td></tr></table></div><div class="note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/icons/note.png" /></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Required skills: Erlang, distribution system</p></td></tr></table></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="chapter"><a href="ch01.html">1. The First Chapter</a></span></dt><dd><dl><dt><span class="section"><a href="ch01s01.html">1.1. Sub-section with Anchor</a></span></dt><dd><dl><dt><span class="section"><a href="ch01s01.html#_chapter_sub_section">1.1.1. Chapter Sub-section</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="ch02.html">2. The Second Chapter</a></span></dt><dt><span class="chapter"><a href="ch03.html">3. The Third Chapter</a></span></dt><dt><span class="appendix"><a href="apa.html">A. Example Appendix</a></span></dt><dd><dl><dt><span class="section"><a href="apas01.html">A.1. Appendix Sub-section</a></span></dt></dl></dd><dt><span class="bibliography"><a href="bi01.html">Example Bibliography</a></span></dt><dt><span class="glossary"><a href="go01.html">Example Glossary</a></span></dt><dt><span class="index"><a href="ix01.html">Example Index</a></span></dt></dl></div><div class="list-of-figures"><p><strong>List of Figures</strong></p><dl><dt>1.1. <a href="ch01.html#idm218943413312">Tiger block image</a></dt></dl></div><div class="list-of-tables"><p><strong>List of Tables</strong></p><dl><dt>1.1. <a href="ch01.html#idm218943818560">An example table</a></dt></dl></div><div class="list-of-examples"><p><strong>List of Examples</strong></p><dl><dt>1.1. <a href="ch01.html#idm218943656160">An example example</a></dt></dl></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ch01.html">Next</a></td></tr></table></div></body></html>
+applications. RiakCore is written in <a class="ulink" href="http://www.erlang.org" target="_top">Erlang</a>
+programming language, open sourced by <a class="ulink" href="http://www.basho.com" target="_top">Basho
+Technologies</a>.  The application built with RiakCore, is usually for
+serving purpose. Being different from what you use on your PC or
+phone, application for serving should never stop, be always available,
+and recover from some really bad disasters. So if you are willing to
+write servers, you can stay.</p><p><span class="strong"><strong>For Whom</strong></span></p><p>Serious programmers who write servers never go down. With years of
+experience in backend programming, you have done enough of thinking
+how to distribute the computing to nodes in server clusters, make the
+storage scalable, and clean up this and that before bringing some
+crashed nodes back. And you know bit of Erlang, and other cool stuff.
+In short, if you have questions in how to write an always-up service,
+you can stay.</p><div class="note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/icons/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Do not scared by me, but except the Erlang part. For reading this
+book, you have to at least be familar with how to write Erlang
+programs. If you are not, one of the excellent book is
+<a class="ulink" href="http://learnyousomeerlang.com" target="_top">LYSE</a>.</p></td></tr></table></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="chapter"><a href="ch01.html">1. The First Chapter</a></span></dt><dd><dl><dt><span class="section"><a href="ch01s01.html">1.1. Sub-section with Anchor</a></span></dt><dd><dl><dt><span class="section"><a href="ch01s01.html#_chapter_sub_section">1.1.1. Chapter Sub-section</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="ch02.html">2. The Second Chapter</a></span></dt><dt><span class="chapter"><a href="ch03.html">3. The Third Chapter</a></span></dt><dt><span class="appendix"><a href="apa.html">A. Example Appendix</a></span></dt><dd><dl><dt><span class="section"><a href="apas01.html">A.1. Appendix Sub-section</a></span></dt></dl></dd><dt><span class="bibliography"><a href="bi01.html">Example Bibliography</a></span></dt><dt><span class="glossary"><a href="go01.html">Example Glossary</a></span></dt><dt><span class="index"><a href="ix01.html">Example Index</a></span></dt></dl></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left">&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch01.html">Next</a></td></tr></table></div></body></html>

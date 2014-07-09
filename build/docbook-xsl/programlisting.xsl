@@ -21,10 +21,10 @@
   </pre>
 </xsl:template>
 
-<xsl:template match="co">
-  <xsl:variable name="coid" select="@id"/>
-  <xsl:variable name="coid-img" select="substring-after(@id, '-')"/>
-  <a id="{$coid}"><img href="{$callout.graphics.path}{$coid-img}.png"></img></a>
+<xsl:template match="text()">
+  <xsl:value-of disable-output-escaping="yes" select="." />
 </xsl:template>
+
+<xsl:template match="co">[link[coid#<xsl:value-of select="@id"/>]]</xsl:template>
 
 </xsl:stylesheet>

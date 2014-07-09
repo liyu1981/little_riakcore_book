@@ -4,10 +4,15 @@ CWD=`pwd`
 SRCROOT=$CWD/..
 TOOLS=$CWD/tools
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # fix the xsltproc can not find resource issue in OSX
+  export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+fi
+
 # assemble the source files
 
 rm -rf src; mkdir -p src; cd src
-node $TOOLS/doTool.js $SRCROOT/preface.asciidoc >book.asciidoc <<< "{
+node $TOOLS/doTool.js $SRCROOT/cover.asciidoc >book.asciidoc <<< "{
   \"version\": \"$VER\",
   \"date\": \"$DATE\"
 }"
@@ -31,13 +36,13 @@ cd -
 
 # now fix the code highlighting part
 cd $VER
-#files="index.html "`ls ch*.html`
-#for f in $files; do
-#  echo -n "source highlighting" $f "... "
-#  node $TOOLS/highlight.js $f >$f.fixed
-#  rm $f;mv $f.fixed $f
-#  echo "done."
-#done
+files="index.html "`ls ch*.html`
+for f in $files; do
+  echo -n "source highlighting" $f "... "
+  node $TOOLS/highlight.js $f >$f.fixed
+  rm $f;mv $f.fixed $f
+  echo "done."
+done
 cd -
 
 # generate the outside symlink

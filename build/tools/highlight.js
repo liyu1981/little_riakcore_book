@@ -1,3 +1,4 @@
+var util = require('util');
 var jsdom = require('jsdom').env;
 var jquery = require('jquery');
 var async = require('async');
@@ -20,6 +21,27 @@ var header = '<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE ht
 var footer = '</html>';
 var pygmentsCss = '<link rel="stylesheet" href="pygments.css" type="text/css">';
 
+function formatCallout(id) {
+  var parts = id.split('-');
+  return util.format('<a id="%s"><img src="images/icons/callouts/%d.png" /></a>', id, parts[1]);
+}
+
+var handleCalloutLinks = (function() {
+  var re = /\[link\[coid#(.+)\]\]/g;
+  return function _replace(out, callback) {
+    var r = re.exec(out);
+    if (r) {
+      var newout = out.substring(0, r.index) + formatCallout(r[1]);
+      re.lastIndex = newout.length;
+      newout += out.substring(r.index + r[0].length);
+      _replace(newout, callback);
+    } else {
+      re.lastIndex = 0;
+      callback(out);
+    }
+  };
+})();
+
 require('fs').readFile(rawfilepath, function(err, data) {
   if (err) {
     return console.error(rawfilepath, err);
@@ -31,12 +53,15 @@ require('fs').readFile(rawfilepath, function(err, data) {
     async.mapSeries($t.toArray(), function(elem, next) {
       var $c = $(elem);
       var language = $c.data('language');
-      var code = $c.html();
-      console.log(code + '\n\n');
+      var code = $c.text();
+      //console.log(code + '\n\n');
       runCmd('pygmentize', ['-f', 'html', '-l', language], code, function(code, out, err) {
         if (code === 0) {
-          console.log(out + '\n\n');
-          $c.replaceWith(out);
+          // now handle the callout links
+          handleCalloutLinks(out, function(out) {
+            //console.log(out + '\n\n');
+            $c.replaceWith(out);
+          });
         } else {
           console.error(err);
         }
@@ -44,7 +69,7 @@ require('fs').readFile(rawfilepath, function(err, data) {
       });
     }, function() {
       $('head').append(pygmentsCss);
-      //console.log(header + $('html').html() + footer);
+      console.log(header + $('html').html() + footer);
     });
   });
 });
