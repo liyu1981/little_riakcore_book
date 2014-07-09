@@ -354,7 +354,11 @@ p {
   line-height: 140%;
 }
 
-div.note
+div.note,
+div.warning,
+div.tip,
+div.important,
+div.caution
 {
   border: 1px solid #ccc;
 }

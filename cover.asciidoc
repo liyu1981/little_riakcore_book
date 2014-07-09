@@ -13,9 +13,9 @@ v{{=it.version}}, {{=it.date}}
 For What and For Whom
 ---------------------
 
-Attention! Your probably arrive the wrong place, and are planning
-spend sometime on something you are not interested and not familiar.
-So let us check whether we should leave.
+WARNING: Attention! You have probably arrived at the wrong place, and are planning
+to spend sometime on something you will be not interested.  So let us check
+whether we should leave.
 
 *For What*
 
@@ -25,21 +25,28 @@ applications. RiakCore is written in http://www.erlang.org[Erlang]
 programming language, open sourced by http://www.basho.com[Basho
 Technologies].  The application built with RiakCore, is usually for
 serving purpose. Being different from what you use on your PC or
-phone, application for serving should never stop, be always available,
-and recover from some really bad disasters. So if you are willing to
-write servers, you can stay.
+phone, application for serving should never stop, be always available, and
+recover from some really bad disasters. So it is believed that servers are much
+harder to be done right. If you are willing to write this kind of serious
+programs -- servers, you can stay.
 
 *For Whom*
 
-Serious programmers who write servers never go down. With years of
-experience in backend programming, you have done enough of thinking
-how to distribute the computing to nodes in server clusters, make the
-storage scalable, and clean up this and that before bringing some
-crashed nodes back. And you know bit of Erlang, and other cool stuff.
-In short, if you have questions in how to write an always-up service,
-you can stay.
+Serious programmers write servers never going down. With years of experience in
+backend programming, they have done enough of thinking how to distribute the
+computing to nodes in server clusters, make the storage scalable, and clean up
+this and that before bringing some crashed nodes back. Lots of programs in lots
+of programming languages have been done. Hundreds of thousands of lines of code
+have made the fun part gone. Then they learned some Erlang, and other cool
+stuff such as
+http://www.erlang.org/doc/design_principles/users_guide.html[OTP], and they
+want to resolve these problems again in a more elegant, understandable way, and
+most importantly, bring the fun parts back.  In short, if you have questions in
+how to elegantly write an always-up, instantly-scalable servers, you can stay.
 
-NOTE: Do not scared by me, but except the Erlang part. For reading this
+----
+Do not scared by me, but except the Erlang part. For reading this
 book, you have to at least be familar with how to write Erlang
 programs. If you are not, one of the excellent book is
 http://learnyousomeerlang.com[LYSE].
+----
