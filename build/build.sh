@@ -36,7 +36,7 @@ cd -
 
 # now fix the code highlighting part
 cd $VER
-files="index.html "`ls ch*.html`
+files=`ls *.html`
 for f in $files; do
   echo -n "source highlighting" $f "... "
   node $TOOLS/highlight.js $f >$f.fixed

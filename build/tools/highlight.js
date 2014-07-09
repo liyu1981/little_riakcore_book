@@ -17,7 +17,7 @@ function runCmd(cmd, args, input, callback) {
   child.stdin.end();
 }
 
-var header = '<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">';
+var header = '<!DOCTYPE html><html>';
 var footer = '</html>';
 var pygmentsCss = '<link rel="stylesheet" href="pygments.css" type="text/css">';
 
