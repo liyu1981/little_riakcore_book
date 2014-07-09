@@ -37,7 +37,7 @@ backend programming, they have done enough of thinking how to distribute the
 computing to nodes in server clusters, make the storage scalable, and clean up
 this and that before bringing some crashed nodes back. Lots of programs in lots
 of programming languages have been done. Hundreds of thousands of lines of code
-have made the fun part gone. Then they learned some Erlang, and other cool
+have made the fun parts vanished . Then they learned some Erlang, and other cool
 stuff such as
 http://www.erlang.org/doc/design_principles/users_guide.html[OTP], and they
 want to resolve these problems again in a more elegant, understandable way, and
@@ -46,7 +46,11 @@ how to elegantly write an always-up, instantly-scalable servers, you can stay.
 
 {zwsp} +
 
-But do not scared by me. :-) As long as you are interested in writing some cool
+But be not scared by me. :-)
+
+{zwsp} +
+
+As long as you are interested in writing some cool
 server stuff, you are welcome! RiakCore is made for ease the process of making
 something distributed cool. Geeks (including me) love it and think it the
 next-big-thing of server programming. But not everyone is geek. In this book, I
