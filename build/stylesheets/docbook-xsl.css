@@ -20,13 +20,6 @@ body blockquote {
   margin-bottom: .75em;
 }
 
-html body {
-  line-height: 1.2;
-  width: 1000px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 body div {
   margin: 0;
 }
@@ -232,6 +225,7 @@ div.toc {
   border: 1px solid #ccc;
   padding: 0px 10px;
   margin-top: 40px;
+  margin-left: 5%;
   margin-right: 10%;
   padding-bottom: 10px;
 }
@@ -350,6 +344,21 @@ span.overline { text-decoration: overline; }
 span.line-through { text-decoration: line-through; }
 
 /* my styles */
+html body {
+  line-height: 1.2;
+  width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 750px) {
+  html body {
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+}
+
 p {
   line-height: 140%;
 }
@@ -360,6 +369,7 @@ div.tip,
 div.important,
 div.caution
 {
+  margin-left: 5% !important;
   margin-top: 10px;
   border: 1px solid #ccc;
 }
