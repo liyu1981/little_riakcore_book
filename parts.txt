@@ -1,1 +1,1 @@
-00-riak-core-intro
+00-intro
