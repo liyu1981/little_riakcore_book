@@ -44,9 +44,18 @@ want to resolve these problems again in a more elegant, understandable way, and
 most importantly, bring the fun parts back.  In short, if you have questions in
 how to elegantly write an always-up, instantly-scalable servers, you can stay.
 
-----
-Do not scared by me, but except the Erlang part. For reading this
-book, you have to at least be familar with how to write Erlang
-programs. If you are not, one of the excellent book is
-http://learnyousomeerlang.com[LYSE].
-----
+{zwsp} +
+
+But do not scared by me. :-) As long as you are interested in writing some cool
+server stuff, you are welcome! RiakCore is made for ease the process of making
+something distributed cool. Geeks (including me) love it and think it the
+next-big-thing of server programming. But not everyone is geek. In this book, I
+will make my best to explain the practice in programming RiakCore, in language
+that everyone can follow and understand.
+
+NOTE: But I am serious in the Erlang part. For reading this
+book, you would better to be familar with writting Erlang
+programs. If you are not, I know an excellent book for you to read. Its name is
+http://learnyousomeerlang.com[Learn Your Some Erlang for great good!], or
+shortly LYSE. Throughout this book, I will frequently reference LYSE, whenever
+there is some Erlang stuff we would better to be aware of.
