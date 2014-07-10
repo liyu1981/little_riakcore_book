@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>A little RiakCore Book</title><link rel="stylesheet" type="text/css" href="docbook-xsl.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="A little RiakCore Book"><link rel="next" href="ch01.html" title="Chapter&nbsp;1.&nbsp;Concept first, Code second"><link rel="stylesheet" href="pygments.css" type="text/css"></head><body><div class="bookmain"><div class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left">&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch01.html">Next</a></td></tr></table><hr></div><div xml:lang="en" class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a id="idm218967374336"></a>A little RiakCore Book</h1></div><div><div class="author"><h3 class="author"><span class="firstname">LI,</span> <span class="othername">Yu</span> <span class="surname">(liyu1981@gmail.com)</span></h3><code class="email">&lt;<a class="email" href="mailto:liyu1981@gmail.com">liyu1981@gmail.com</a>&gt;</code></div></div><div><div class="revhistory"><table style="border-style:solid; width:100%;" summary="Revision History"><tr><th align="left" valign="top" colspan="3"><strong>Revision History</strong></th></tr><tr><td align="left">Revision 0.0.1</td><td align="left">2014-07</td><td align="left">LY(</td></tr></table></div></div></div><hr></div><div class="dedication"><div class="titlepage"><div><div><h1 class="title"><a id="_for_what_and_for_whom"></a>For What and For Whom</h1></div></div></div><div class="warning" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="images/icons/warning.png"></td><th align="left">Warning</th></tr><tr><td align="left" valign="top"><p>Attention! You have probably arrived at the wrong place, and are planning
+to spend sometime on something you will be not interested.  So let us check
+whether we should leave.</p></td></tr></table></div><p><span class="strong"><strong>For What</strong></span></p><p>This little book is about <a class="ulink" href="https://github.com/basho/riak_core" target="_top">RiakCore</a>, which
+is an application framework for building distributed, scalable, fault-tolerant
+applications. RiakCore is written in <a class="ulink" href="http://www.erlang.org" target="_top">Erlang</a>
+programming language, open sourced by <a class="ulink" href="http://www.basho.com" target="_top">Basho
+Technologies</a>.  The application built with RiakCore, is usually for
+serving purpose. Being different from what you use on your PC or
+phone, application for serving should never stop, be always available, and
+recover from some really bad disasters. So it is believed that servers are much
+harder to be done right. If you are willing to write this kind of serious
+programs — servers, you can stay.</p><p><span class="strong"><strong>For Whom</strong></span></p><p>Serious programmers write servers never going down. With years of experience in
+backend programming, they have done enough of thinking how to distribute the
+computing to nodes in server clusters, make the storage scalable, and clean up
+this and that before bringing some crashed nodes back. Lots of programs in lots
+of programming languages have been done. Hundreds of thousands of lines of code
+have made the fun parts vanished . Then they learned some Erlang, and other cool
+stuff such as
+<a class="ulink" href="http://www.erlang.org/doc/design_principles/users_guide.html" target="_top">OTP</a>, and they
+want to resolve these problems again in a more elegant, understandable way, and
+most importantly, bring the fun parts back.  In short, if you have questions in
+how to elegantly write an always-up, instantly-scalable servers, you can stay.</p><p>​</p><p>But be not scared by me. :-)</p><p>​</p><p>As long as you are interested in writing some cool
+server stuff, you are welcome! RiakCore is made for ease the process of making
+something distributed cool. Geeks (including me) love it and think it the
+next-big-thing of server programming. But not everyone is geek. In this book, I
+will make my best to explain the practice in programming RiakCore, in language
+that everyone can follow and understand.</p><div class="note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/icons/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>But I am serious in the Erlang part. For reading this
+book, you would better to be familar with writting Erlang
+programs. If you are not, I know an excellent book for you to read. Its name is
+<a class="ulink" href="http://learnyousomeerlang.com" target="_top">Learn Your Some Erlang for great good!</a>, or
+shortly LYSE. Throughout this book, I will frequently reference LYSE, whenever
+there is some Erlang stuff we would better to be aware of.</p></td></tr></table></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="chapter"><a href="ch01.html">1. Concept first, Code second</a></span></dt><dd><dl><dt><span class="section"><a href="ch01s01.html">1.1. Why Distributed Servers are Hard?</a></span></dt><dt><span class="section"><a href="ch01s02.html">1.2. Let us Try some Thought Experiments</a></span></dt><dt><span class="section"><a href="ch01s03.html">1.3. Theory behind RiakCore in Simple Language</a></span></dt><dt><span class="section"><a href="ch01s04.html">1.4. Summary Up</a></span></dt></dl></dd><dt><span class="appendix"><a href="apa.html">A. Example Appendix</a></span></dt><dd><dl><dt><span class="section"><a href="apas01.html">A.1. Appendix Sub-section</a></span></dt></dl></dd><dt><span class="bibliography"><a href="bi01.html">Bibliography</a></span></dt><dt><span class="glossary"><a href="go01.html">Glossary</a></span></dt><dt><span class="index"><a href="ix01.html">Index</a></span></dt></dl></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left">&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch01.html">Next</a></td></tr></table></div></div></body></html>
