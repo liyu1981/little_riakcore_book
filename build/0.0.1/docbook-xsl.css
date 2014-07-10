@@ -359,6 +359,16 @@ div.bookmain {
   box-shadow: 5px 5px 0px 0px #ccc;
 }
 
+div.bookfooter {
+  margin: 18px 28px;
+  color: white;
+  font-size: 80%;
+}
+
+div.bookfooter a {
+  color: #ddd;
+}
+
 @media screen and (max-width: 750px) {
   div.bookmain {
     width: 90%;
