@@ -12,8 +12,8 @@ documents.
 
 
 [bibliography]
-Example Bibliography
-====================
+Bibliography
+============
 The bibliography list is a style of AsciiDoc bulleted list.
 
 [bibliography]
@@ -25,8 +25,8 @@ The bibliography list is a style of AsciiDoc bulleted list.
 
 
 [glossary]
-Example Glossary
-================
+Glossary
+========
 Glossaries are optional. Glossaries entries are an example of a style
 of AsciiDoc labeled lists.
 
@@ -39,14 +39,14 @@ A second glossary term::
 
 
 [colophon]
-Example Colophon
-================
+Colophon
+========
 Text at the end of a book describing facts about its production.
 
 
 [index]
-Example Index
-=============
+Index
+=====
 ////////////////////////////////////////////////////////////////
 The index is normally left completely empty, it's contents are
 generated automatically by the DocBook toolchain.

@@ -34,12 +34,13 @@ cp -rv ../stylesheets/* .
 cp -rv ../images .
 cd -
 
-# now fix the code highlighting part
+# now format the doc again with my love :)
+# e.g., fix the code highlighting part
 cd $VER
 files=`ls *.html`
 for f in $files; do
-  echo -n "source highlighting" $f "... "
-  node $TOOLS/highlight.js $f >$f.fixed
+  echo -n "formating" $f "... "
+  node $TOOLS/format.js $f >$f.fixed
   rm $f;mv $f.fixed $f
   echo "done."
 done

@@ -42,6 +42,48 @@ var handleCalloutLinks = (function() {
   };
 })();
 
+var highlightCode = function($, next) {
+  var $t = $('pre.programlisting');
+  async.mapSeries($t.toArray(), function(elem, next) {
+    var $c = $(elem);
+    var language = $c.data('language');
+    var code = $c.text();
+    //console.log(code + '\n\n');
+    runCmd('pygmentize', ['-f', 'html', '-l', language], code, function(code, out, err) {
+      if (code === 0) {
+        // now handle the callout links
+        handleCalloutLinks(out, function(out) {
+          //console.log(out + '\n\n');
+          $c.replaceWith(out);
+        });
+      } else {
+        console.error(err);
+      }
+      next();
+    });
+  }, function() {
+    next();
+  });
+};
+
+var finalFormat = function($, next) {
+  // append pygments css
+  $('head').append(pygmentsCss);
+
+  // wrap all contents into a big div
+  var allCont = $('body').children();
+  $('body').html($('<div class="bookmain"></div>'));
+  $('div.bookmain').append(allCont);
+
+  next();
+};
+
+function asyncSeriesWrap(func, $) {
+  return function(next) {
+    func($, next);
+  };
+}
+
 require('fs').readFile(rawfilepath, function(err, data) {
   if (err) {
     return console.error(rawfilepath, err);
@@ -49,27 +91,12 @@ require('fs').readFile(rawfilepath, function(err, data) {
   var html = data.toString();
   jsdom(html, function(errors, window) {
     var $ = jquery(window);
-    var $t = $('pre.programlisting');
-    async.mapSeries($t.toArray(), function(elem, next) {
-      var $c = $(elem);
-      var language = $c.data('language');
-      var code = $c.text();
-      //console.log(code + '\n\n');
-      runCmd('pygmentize', ['-f', 'html', '-l', language], code, function(code, out, err) {
-        if (code === 0) {
-          // now handle the callout links
-          handleCalloutLinks(out, function(out) {
-            //console.log(out + '\n\n');
-            $c.replaceWith(out);
-          });
-        } else {
-          console.error(err);
-        }
-        next();
-      });
-    }, function() {
-      $('head').append(pygmentsCss);
+    async.series([
+      asyncSeriesWrap(highlightCode, $),
+      asyncSeriesWrap(finalFormat, $)
+    ], function() {
       console.log(header + $('html').html() + footer);
     });
   });
 });
+
