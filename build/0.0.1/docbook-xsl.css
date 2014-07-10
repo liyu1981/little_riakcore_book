@@ -349,6 +349,18 @@ body {
   background: url('images/ios_texture.jpg') repeat;
 }
 
+h1.title,
+h2.title,
+h3.title,
+h4.title
+{
+  text-shadow: 2px 2px #ccc;
+}
+
+div.book>div.titlepage:first-child h1.title {
+  font-size: 400%;
+}
+
 div.bookmain {
   line-height: 1.2;
   width: 960px;
