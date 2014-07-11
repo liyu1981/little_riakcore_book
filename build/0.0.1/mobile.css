@@ -5,8 +5,25 @@
   }
 
   div.book>div.titlepage:first-child h1.title {
-    font-size: 150%;
+    font-size: 200%;
   }
+}
+
+@media (max-width: 400px) {
+
+  div.note,
+  div.warning,
+  div.tip,
+  div.important,
+  div.caution
+  {
+    margin-left: 10px !important;
+  }
+
+  div.blockquote {
+    width: 90%;
+  }
+
 }
 
 @media (max-width: 400px) {
