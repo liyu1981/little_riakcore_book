@@ -1,4 +1,4 @@
-Concept first, Code second
+Concept First, Code Second
 --------------------------
 
 [quote, Linus Torvalds, Message to linux-kernel mailing list]
@@ -6,34 +6,35 @@ ____
 Talk is cheap. Show me the code.
 ____
 
-Yes, I know that famous quote(and you may found more
+Yes, I know that famous quote(and you may find more
 http://en.wikiquote.org/wiki/Linus_Torvald[here]). But this time things are
-different. for serious backend servers, especially the RiakCore application we
-will go to code and analysis, know some concept is necessary.
+different. For serious backend servers, especially the RiakCore application we
+will code and analysis, it is necessary to know the concepts first.
 
 
 
-Why Distributed Servers are Hard?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Why Write Distributed Servers are Hard?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 [quote, Joe Armstrong, Why Programming is Difficult]
 ____
-Many years ago I used to think that programming was easy, as the years have passed I have have realized that programming is not easy.
+Many years ago I used to think that programming was easy, as the years have
+passed I have realized that programming is not easy.
 ____
 
 To do...
 
 
 
-Let us Try some Thought Experiments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get the Idea Through Thought Experiments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
-Theory behind RiakCore in Simple Language
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Theory behind RiakCore for Dummies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
-Summary Up
-~~~~~~~~~~
+Are We Ready to Code Now?
+~~~~~~~~~~~~~~~~~~~~~~~~~

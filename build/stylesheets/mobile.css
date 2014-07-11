@@ -1,0 +1,11 @@
+@media (max-width: 750px) {
+
+  div.bookmain {
+    width: 90%;
+    margin: 0px 0px;
+  }
+
+  div.book>div.titlepage:first-child h1.title {
+    font-size: 150%;
+  }
+}
