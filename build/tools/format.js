@@ -17,10 +17,6 @@ function runCmd(cmd, args, input, callback) {
   child.stdin.end();
 }
 
-var header = '<!DOCTYPE html><html>';
-var footer = '</html>';
-var pygmentsCss = '<link rel="stylesheet" href="pygments.css" type="text/css">';
-
 function formatCallout(id) {
   var parts = id.split('-');
   return util.format('<a id="%s"><img src="images/icons/callouts/%d.png" /></a>', id, parts[1]);
@@ -67,8 +63,21 @@ var highlightCode = function($, next) {
 };
 
 var finalFormat = function($, next) {
+  // append media query
+  var mediaQuery = '<meta name="viewport" content="width=device-width, initial-scale=1">';
+  $('head').prepend(mediaQuery);
+
   // append pygments css
+  var pygmentsCss = '<link rel="stylesheet" href="pygments.css" type="text/css">';
   $('head').append(pygmentsCss);
+
+  // append my css
+  var myCss = '<link rel="stylesheet" href="my.css" type="text/css">';
+  $('head').append(myCss);
+
+  // append my css
+  var mobileCss = '<link rel="stylesheet" href="mobile.css" type="text/css">';
+  $('head').append(mobileCss);
 
   // wrap all contents into a big div
   var allCont = $('body').children();
@@ -89,6 +98,8 @@ function asyncSeriesWrap(func, $) {
   };
 }
 
+var header = '<!DOCTYPE html><html>';
+var footer = '</html>';
 require('fs').readFile(rawfilepath, function(err, data) {
   if (err) {
     return console.error(rawfilepath, err);
