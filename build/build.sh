@@ -9,6 +9,16 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
 fi
 
+# check tools first
+cd tools
+if [ -d "node_modules/jsdom" ]; then
+  echo "tools should have been inited."
+else
+  npm install
+  echo "tools now have been inited."
+fi
+cd -
+
 # assemble the source files
 
 rm -rf src; mkdir -p src; cd src

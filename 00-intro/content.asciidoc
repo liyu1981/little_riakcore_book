@@ -8,8 +8,8 @@ ____
 
 Yes, I know that famous quote(and you may find more
 http://en.wikiquote.org/wiki/Linus_Torvald[here]). But this time things are
-different. For serious backend servers, especially the RiakCore application we
-will code and analysis, it is necessary to know the concepts first.
+different. For serious backend server, especially the one based on RiakCore we
+will code and analysis, it is necessary to know some concepts before coding.
 
 
 
