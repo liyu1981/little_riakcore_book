@@ -28,15 +28,16 @@ services. To enhance the servers we write to be highly robust, we may need to
 dig deeper to the design of RiakCore. I leave those concepts to the time when
 we need them.
 
-TIP: Some of the answers in this chapter may be not the most optimal/efficient
-ones. They are the answers chosen by inventors of RiakCore. The inventors of
-RiakCore tried really hard to make it practical, efficient and elegant in the
-same time. Sometime, the goal can be achieved, but sometime it just can not.
-When we are in the latter scenario, the chosen design prefers the practical
-property. In fact, RiakCore is built while the inventors were building their
-flagship product -- Riak KV, which is a distributed, highly reliable Key-value
-database. They have to make it work first, then improve it to be efficient and
-elegant.
+TIP: Some of the answers in this chapter may be not the most
+optimal/efficient ones. They are the answers chosen by inventors of
+RiakCore. The inventors of RiakCore tried really hard to make it
+practical, efficient and elegant in the same time. Sometime, the goal
+can be achieved, but sometime it just can not.  When we are in the
+latter scenario, the chosen design prefers being practical. In fact,
+RiakCore is built while the inventors were building their flagship
+product -- https://github.com/basho/riak_kv[Riak KV], which is a
+distributed, highly reliable Key-value database. They have to make it
+work first, then improve it to be efficient and elegant.
 
 
 Why Writing Distributed Server is Hard?
@@ -48,9 +49,15 @@ Many years ago I used to think that programming was easy, as the years have
 passed I have realized that programming is not easy.
 ____
 
-To do...
+.Hello World in C
+[source, c]
+----
+#include <stdio.h>
 
-
+int main(int argc, char* argv[]) {
+  printf("Hello, world!");
+}
+----
 
 Get the Idea Through Thought Experiments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

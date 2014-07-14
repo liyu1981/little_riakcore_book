@@ -24,4 +24,9 @@
     width: 90%;
   }
 
+  div.highlight {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
 }
