@@ -15,16 +15,18 @@
 
      ******************************************************************** -->
 
-<xsl:template match="programlisting">
+<xsl:template match="//programlisting">
   <pre class="programlisting" data-language="{@language}">
     <xsl:apply-templates/>
   </pre>
 </xsl:template>
 
-<xsl:template match="text()">
-  <xsl:value-of disable-output-escaping="yes" select="." />
+<xsl:template match="//programlisting//co">[link[coid#<xsl:value-of select="@id"/>]]</xsl:template>
+
+<xsl:template match="//programlisting//text()">
+  <xsl:message>Matched text element <xsl:value-of select="." disable-output-escaping="yes" /></xsl:message>
+  <xsl:value-of select="."/>
 </xsl:template>
 
-<xsl:template match="co">[link[coid#<xsl:value-of select="@id"/>]]</xsl:template>
 
 </xsl:stylesheet>

@@ -49,7 +49,9 @@ Many years ago I used to think that programming was easy, as the years have
 passed I have realized that programming is not easy.
 ____
 
-.Hello World in C
+I agree with Joe because when I learned my first class in programming, I wrote
+the famous 'Hello, world' like below
+
 [source, c]
 ----
 #include <stdio.h>
@@ -58,6 +60,47 @@ int main(int argc, char* argv[]) {
   printf("Hello, world!");
 }
 ----
+
+I felt really good as the text shown on my monitor. After that, I learned more
+on how to get input from user, how to output something as feedback, and even
+how to store my data in order to use them next time. The applications I wrote
+in my early days of programming, usually go through a similar life cycle: (1) start
+itself; (2) do some initialization; (3) wait for some user input; (4) do the job; (5) output
+the result; (6) then kill itself. In fact, most applications we are using nowadays
+are still of that type. They are technically easy to be done right.
+
+But there are some different applications. They are usually called servers.
+Server is a computer program running to serve the requests of other users or
+programs. Its life cycle is: (1) start itself; (2) do some initialization; (3)
+wait for some user input; (4) do the job; (5) output the result; (6) then go
+back to step (3). You may have noticed that the only difference is the last,
+which is small but fundamental. The difference requires our server to be
+robust, fault-tolerant, and scalable.
+
+Now image that we have to turn our 'Hello, world' application into something
+useful, such as a beacon service named 'Hello', which simply sends out message
+when user request, such as "Hello, world". It could be used in many areas, from
+the cell phone network around you, to the robots roaming on Mars. As a service,
+our 'Hello' should be
+
+Robust::
+  It accepts whatever user input, even those are crazy.
+
+Fault-tolerance::
+  It is always on as long as the hardware is fine. It also have to recover
+after the hardware issue is resolved.
+
+Scalable::
+  It can serve as many requests as the horse power of hardware is enough. It
+can also serve more requests when more hardwares are added in.
+
+It is simple to be robust for our 'Hello': we can just ignore the content of
+user input, and just response string "Hello, world" to user whenever there is
+input. But if we want to do more, such as send back "Hello, <user's name>", we
+have to consider on how to process user input. And if we allow user input to be
+something complex, such as a data structure, much more work have to be done.
+
+To be fault-tolerance, more improvements has to be done to our 'Hello'.
 
 Get the Idea Through Thought Experiments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
